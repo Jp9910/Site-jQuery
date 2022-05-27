@@ -17,3 +17,11 @@ campoTexto.on('input', function(){
     qntCaracteresDigitados.text(conteudo.replace(/\s+/g,'').length)
     qntPalavrasDigitadas.text(conteudo.split(/\s+/).length-1)
 })
+
+let segundosRestantes = $('#segundos-restantes')
+campoTexto.on('focus', function(){
+    setInterval(function(){
+        menosUm = segundosRestantes.text() - 1
+        console.log(menosUm)
+    },1000)
+})
