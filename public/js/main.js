@@ -14,6 +14,7 @@ $(document).ready(function() { //função chamada ao carregar a página. tem o a
     idIntervalo = iniciarCronometro()
     iniciarMarcadoresDeAcerto()
     botaoReinicar.click(reiniciar)
+    $('section').find('table').find('tbody').find('tr').find('a').click(removerLinha)
 })
 
 function atualizarTamanhoFrase()
@@ -73,10 +74,12 @@ function reiniciar()
 
 function gameOver()
 {
-    campoDigitacao.attr('disabled',true) //desabilitar campo de digitacao
     clearInterval(idIntervalo) //desabilitar setInterval
+    campoDigitacao.attr('disabled',true) //desabilitar campo de digitacao
     campoDigitacao.addClass('campo-desabilitado')
+    atualizarPlacar()
 }
+
 
 function iniciarMarcadoresDeAcerto()
 {
