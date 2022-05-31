@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <h1>Alura Typer</h1>
-    <p class="frase">Frase teste com mais algumas palavras</p>
-    <ul class="informacoes">
-        <li><span id="tamanho-frase">0</span> palavras</li>
-        <li>10 segundos</li>
-    </ul>
-    <textarea id="campo-digitacao" cols="40" rows="8"></textarea>
-    <ul class="informacoes">
-        <li><span id="caracteres-digitados">0</span> caracteres</li>
-        <li><span id="palavras-digitadas">0</span> palavras</li>
-    </ul>
+    <div class="container">
+        <h1 class="center">Alura Typer</h1>
+        
+        <p class="frase center">Frase teste com mais algumas palavras que precisam ser digitadas antes que o tempo determinado acabe!</p>
+
+        <ul class="informacoes center">
+            <li>
+                <i class="small material-icons icone">query_builder</i>
+                <span id="tamanho-frase">0</span> palavras
+            </li>
+            <li>
+                <i class="small material-icons icone">description</i>
+                <span id="segundos-restantes">4</span> segundos
+            </li>
+        </ul>
+
+        <textarea id="campo-digitacao" cols="40" rows="8"></textarea>
+        
+        <div class="botoes">
+            <a id="botao-reiniciar" class="botao btn-floating btn-large waves-effect waves-light blue">
+                <i class="material-icons">replay</i>
+            </a>
+        </div>
+        
+        <ul class="informacoes center">
+            <li><span id="caracteres-digitados">0</span> caracteres</li>
+            <li><span id="palavras-digitadas">0</span> palavras</li>
+        </ul>
+    </div>
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
 </body>

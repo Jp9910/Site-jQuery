@@ -1,0 +1,29 @@
+.frase {
+    font-size: 20px;
+}
+
+#campo-digitacao {
+    font-size: 20px;
+    height: 130px;
+    border: 3px solid black;
+}
+
+.campo-desabilitado {
+    background-color: lightgrey;
+}
+
+.icone {
+    vertical-align: middle;
+}
+
+.borda-vermelha {
+    border: 10px solid red;
+}
+
+.borda-verde {
+    border: 10px solid green;
+}
+
+.botao {
+    margin: 3px;
+}
