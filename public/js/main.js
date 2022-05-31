@@ -3,7 +3,7 @@ let qntCaracteresDigitados = $('#caracteres-digitados')
 let qntPalavrasDigitadas = $('#palavras-digitadas')
 
 let segundosRestantes = $('#segundos-restantes')
-const tempoInicial = segundosRestantes.text()
+let tempoInicial = segundosRestantes.text()
 let campoDigitacao = $('#campo-digitacao')
 let botaoReinicar = jQuery('#botao-reiniciar')
 let idIntervalo = 0
@@ -16,6 +16,19 @@ $(document).ready(function() { //função chamada ao carregar a página. tem o a
     botaoReinicar.click(reiniciar)
     $('section').find('table').find('tbody').find('tr').find('a').click(removerLinha)
 })
+
+function atualizarInformacoes(elemento)
+{
+    frase.text(elemento.texto)
+    atualizarTamanhoFrase()
+    atualizarTempoInicial(elemento.tempo)
+}
+
+function atualizarTempoInicial(tempo)
+{
+    tempoInicial = tempo
+    $('#segundos-restantes').text(tempo)
+}
 
 function atualizarTamanhoFrase()
 {
@@ -83,8 +96,8 @@ function gameOver()
 
 function iniciarMarcadoresDeAcerto()
 {
-    let frase = $('.frase').text()
     campoDigitacao.on('input', function(){
+        let frase = $('.frase').text()
         let digitado = campoDigitacao.val()
         let comparavel = frase.substring(0, digitado.length)
         if( digitado == comparavel ) { //if (frase.startsWith(digitado))

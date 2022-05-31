@@ -1,7 +1,29 @@
+$('#botao-placar').click(togglePlacar);
+
+function scrollPlacar () {
+    posicaoPlacar = $('.placar').offset().top; //pegar offset entre o topo e o elemento
+    $('html').animate({scrollTop: posicaoPlacar+'px'}, 1000);
+}
+
+function togglePlacar () {
+    //$(".placar").css("display", "block"); //alterar o css diretamente
+    //$(".placar").show(); //função do jquery para mostrar
+    //$(".placar").hide(); //função do jquery para esconder
+    //$(".placar").toggle(); //função do jquery para toggle de mostrar/esconder
+    $(".placar").stop().slideToggle(600); //stop() para a animação atual. slidetoggle(): função do jquery para toggle de mostrar/esconder com uma animação de tantos milisegundos. também tem o slideUp() para esconder e slideDown() para mostrar
+}
+
 function removerLinha (event) {
     event.preventDefault();
     //$(this) transforma o objeto em um objeto jQuery
-    $(this).parent().parent().remove();
+    linha = $(this).parent().parent();
+    //linha.fadeOut(1000); //também existe fadeIn() fadeToggle()
+    //setTimeout( () => {
+    //    linha.remove();
+    //}, 1000)
+    linha.fadeOut(function() {
+        linha.remove();
+    })
 }
 
 function novaLinha(usuario,palavras){
@@ -39,6 +61,8 @@ function atualizarPlacar() {
     //adicionar evento de remover ao botao de delete
         row.find('.botao-remover').click(removerLinha)
     tbodyPlacar.prepend(row);
+    $('.placar').slideDown(600);
+    scrollPlacar()
 }
 
 //$("h1").parent(".vermelha").remove();

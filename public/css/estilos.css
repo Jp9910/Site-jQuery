@@ -27,3 +27,11 @@
 .botao {
     margin: 3px;
 }
+
+.placar {
+    display: none;
+}
+
+body {
+    overflow: scroll;
+}
