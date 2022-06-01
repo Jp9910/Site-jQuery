@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/libs/materialize.min.css">
     <link rel="stylesheet" href="css/libs/google-fonts.css">
     <link rel="stylesheet" href="css/libs/selectize.default.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/tooltipster.bundle.min.css" />
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -35,23 +36,23 @@
         <textarea id="campo-digitacao" cols="40" rows="8"></textarea>
         
         <div class="botoes">
-            <a id="botao-reiniciar" class="botao btn-floating btn-large waves-effect waves-light cyan">
+            <a id="botao-reiniciar" title="Jogar Novamente" class="botao btn-floating btn-large waves-effect waves-light cyan">
                 <i class="material-icons">replay</i>
             </a>
-            <a id="botao-frase" class="botao btn-floating btn-large waves-effect waves-light light-blue">
+            <a id="botao-frase" title="Trocar Frase" class="botao btn-floating btn-large waves-effect waves-light light-blue">
                 <i class="material-icons">text_fields</i>
             </a>
-            <a id="botao-frase-id" class="botao btn-floating btn-large waves-effect waves-light blue">
+            <a id="botao-frase-id" title="Escolher Frase" class="botao btn-floating btn-large waves-effect waves-light blue">
                 <i class="material-icons">repeat_one</i>
             </a>
                 <input type="number" min="0" id="frase-id">
-            <a id="botao-salvar-placar" class="botao btn-floating btn-large waves-effect waves-light light-green">
+            <a id="botao-salvar-placar" title="Salvar Placar" class="tooltip botao btn-floating btn-large waves-effect waves-light light-green">
                 <i class="material-icons">sync</i>
             </a>
-            <a id="botao-placar" class="botao btn-floating btn-large waves-effect waves-light green">
+            <a id="botao-placar" title="Mostrar/Esconder Placar" class="botao btn-floating btn-large waves-effect waves-light green">
                 <i class="material-icons">assignment</i>
             </a>
-            <div class="select-usuarios">
+            <div class="select-usuarios" title="Escolher Usuário">
                 <select id="usuarios">
                    <option value="Douglas">Douglas</option>
                    <option value="Flavio">Flavio</option>
@@ -74,15 +75,7 @@
                 <th>Remover</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>Nome</td>
-                    <td>999</td>
-                    <td>
-                        <a href="#" class="botao-remover"> <!--tag 'a' é para o ícone ser clicável e ter uma funcionalidade-->
-                            <i class="small material-icons">delete</i>
-                        </a>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
     </section>
@@ -91,5 +84,6 @@
     <script src="js/placar.js"></script>
     <script src="js/frase.js"></script>
     <script src="js/selectize.js"></script>
+    <script src="js/tooltipster.bundle.min.js"></script>
 </body>
 </html>

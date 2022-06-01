@@ -20,6 +20,7 @@ $(document).ready(function() { //função chamada ao carregar a página. tem o a
         create: true,
         sortField: 'text'
     });
+    $(".tooltip").tooltipster({trigger: 'hover'}); //iniciar o tooltipster nos elementos com classe .tooltip
 })
 
 function atualizarInformacoes(elemento)

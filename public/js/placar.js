@@ -20,8 +20,18 @@ function salvarPlacar() {
         let palavras = $(this).find('td:nth-child(2)').text(); //td que o 2-ésimo filho de this
         placar.push({usuario: usuario, pontos: palavras});
     });
-    $.post('http://localhost:3000/placar', {placar});
-    mostrarInfo('Placar Salvo!')
+    $.post('http://localhost:3000/placar', {placar}, 
+        function(){
+            $('.tooltip').tooltipster('open').tooltipster('content', 'Placar Salvo!')
+            mostrarInfo('Placar Salvo!')
+        }).fail(function(){
+            $('.tooltip').tooltipster('open').tooltipster('content', 'Falha ao salvar o placar')
+        }).always(function(){
+            setTimeout(function(){
+                $('.tooltip').tooltipster('close')
+                $('.tooltip').tooltipster('content','Salvar Placar')
+            },2000)
+        })
 }
 
 function scrollPlacar () {
