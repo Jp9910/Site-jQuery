@@ -1,3 +1,3 @@
-# Site-jQuery
+# typing-game-web
 
-Site feito com HTML, Javascript e jQuery
+Jogo web de digitação feito com HTML, Javascript e jQuery
