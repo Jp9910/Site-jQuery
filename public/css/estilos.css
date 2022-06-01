@@ -35,3 +35,30 @@
 body {
     overflow: scroll;
 }
+
+.erro {
+    color: red;
+    display: none;
+}
+
+.info {
+    font-size: 20px;
+    color:rgb(0, 128, 90);
+    display: none;
+}
+
+#spinner{
+    display: none;
+}
+
+#frase-id{
+    width: 40px;
+}
+
+#botao-salvar-placar{
+    float: right;
+}
+
+#botao-placar{
+    float: right;
+}

@@ -15,6 +15,7 @@ $(document).ready(function() { //função chamada ao carregar a página. tem o a
     iniciarMarcadoresDeAcerto()
     botaoReinicar.click(reiniciar)
     $('section').find('table').find('tbody').find('tr').find('a').click(removerLinha)
+    getPlacar()
 })
 
 function atualizarInformacoes(elemento)
@@ -119,3 +120,12 @@ function iniciarMarcadoresDeAcerto()
 //$('textarea').css("border","2px solid red"); //adiciona uma nova propriedade css
 //var a = $('div').css(["background-color","width"])
 //console.log(a.width)
+
+function mostrarInfo(texto){
+    info = $('.info')
+    info.text(texto)
+    info.fadeIn()
+    setTimeout(function(){
+        info.fadeOut()
+    }, 2000);
+}

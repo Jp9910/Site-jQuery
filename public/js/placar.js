@@ -1,4 +1,28 @@
 $('#botao-placar').click(togglePlacar);
+$('#botao-salvar-placar').click(salvarPlacar);
+
+function getPlacar() {
+    $.get('http://localhost:3000/placar',function(data){
+        let tbodyPlacar = $('.placar').find('tbody');
+        data.forEach(element => { //ou $.each(data, function() {}. no $.each usa-se this para acessar cada elemento, e no forEach do js usa-se o parâmetro da função
+            let row = novaLinha(element.usuario,element.pontos)
+            row.find('.botao-remover').click(removerLinha)
+            tbodyPlacar.prepend(row)
+        });
+    })
+}
+
+function salvarPlacar() {
+    placar = []
+    pontuacoes = $('tbody>tr'); //obtem todos os tr's que são filhos diretos de tbody
+    pontuacoes.each(function() { //não funciona com arrow function??
+        let usuario = $(this).find('td:nth-child(1)').text(); //td que o 1-ésimo filho de this
+        let palavras = $(this).find('td:nth-child(2)').text(); //td que o 2-ésimo filho de this
+        placar.push({usuario: usuario, pontos: palavras});
+    });
+    $.post('http://localhost:3000/placar', {placar});
+    mostrarInfo('Placar Salvo!')
+}
 
 function scrollPlacar () {
     posicaoPlacar = $('.placar').offset().top; //pegar offset entre o topo e o elemento
