@@ -16,6 +16,10 @@ $(document).ready(function() { //função chamada ao carregar a página. tem o a
     botaoReinicar.click(reiniciar)
     $('section').find('table').find('tbody').find('tr').find('a').click(removerLinha)
     getPlacar()
+    $("#usuarios").selectize({
+        create: true,
+        sortField: 'text'
+    });
 })
 
 function atualizarInformacoes(elemento)

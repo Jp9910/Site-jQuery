@@ -75,7 +75,7 @@ function novaLinha(usuario,palavras){
 
 function atualizarPlacar() {
     let tbodyPlacar = $('.placar').find('tbody');
-    nome = "JP"
+    nome = $('#usuarios').val()
     //montando a linha como string:
         //botaoRemover = `<a href="#"><i class="small material-icons">delete</i></a>`
         //row = `<tr><td>${nome}</td><td>${qntPalavrasDigitadas.text()}</td><td>${botaoRemover}</td><tr>`;
